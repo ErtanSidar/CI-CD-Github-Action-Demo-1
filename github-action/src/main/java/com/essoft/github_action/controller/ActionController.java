@@ -12,7 +12,7 @@ public class ActionController {
 
     @GetMapping
     public ResponseEntity<String> getAction() {
-        return new ResponseEntity<>("Github Action Version:1.0.0", HttpStatus.OK);
+        return new ResponseEntity<>("Github Action Version:2.0.0", HttpStatus.OK);
     }
 
 }

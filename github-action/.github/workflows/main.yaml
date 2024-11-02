@@ -17,6 +17,14 @@ jobs:
           distribution: 'coretto'
           java-version: 17
 
+      - name: Cache Local Maven Repository
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hasFiles('**/pom.xml')}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Build App
         run: |
           mvn clean
